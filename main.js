@@ -1,17 +1,18 @@
 const input = document.getElementById('task-input');
 const tasks = document.getElementById('todo-list');
 let bg = document.querySelector('.bg');
-let themeToggle = document.getElementById('theme-toggle');
-let remove = document.querySelector('.remove');
+// let darkTheme = document.getElementById('dark-theme');
+// let lightTheme = document.getElementById('light-theme');
 
 // Add todo
-document.addEventListener('keyup', addTodo);
+input.addEventListener('keyup', addTodo);
 // Remove todo
-remove.addEventListener('click', removeTodo);
+document.addEventListener('click', removeTodo);
+// Remove todo
 // Remove all todos
 // document.addEventListener('click', removeAllTodos);
-// Theme toggler
-// document.addEventListener('click', theme);
+//Theme toggler
+// darkTheme.addEventListener('click', theme);
 
 // Add todo
 function addTodo() {
@@ -29,25 +30,22 @@ function addTodo() {
 }
 
 // Remove todo
-function removeTodo() {
-    console.log(remove.parentNode);
+function removeTodo(e) {
+    if(e.target.matches('.remove')) {
+        e.target.parentNode.remove();
+    }
 }
+
 // Remove all todos
 // function removeAllTodos() {
 //     tasks.innerHTML = '';
 // }
 // Toggle theme
 function theme() {
-    // if(themeToggle.src === '/images/icon-moon.svg') {
-    //     // Dark theme
-    //     bg.style.background = "url('images/bg-mobile-dark.jpg') no-repeat";
-    //     themeToggle.src = "images/icon-sun.svg";
-    // }else { 
-    //     //Light theme
-    //     bg.style.background = "url('images/bg-mobile-light.jpg') no-repeat";
-    //     themeToggle.src = "images/icon-moon.svg";
-    // }
-    console.log(themeToggle.src);
+    if (darkTheme) {
+        darkTheme.classList.toggle('darkTheme');
+        lightTheme.classList.toggle('light-theme');
+    }
 }
 
 
