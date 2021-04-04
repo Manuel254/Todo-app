@@ -60,6 +60,7 @@ body {
     padding: 1.5em;
     width: 100%;
     margin: 7% 0;
+    caret-color: blueviolet;
 }
 
 #task-input:focus {
@@ -129,13 +130,13 @@ input[type="checkbox"]:checked + label::before {
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg ,hsl(192, 100%, 67%),hsl(280, 87%, 65%) );
-    
 }
 
 /* Affects the checkbox label */
 input[type="checkbox"]:checked + label{
     text-decoration: line-through;
     color: hsl(233, 11%, 84%);
+    transition: all 0.1s ease-in;
 }
 
 /* Desktop */
