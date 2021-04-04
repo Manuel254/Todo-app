@@ -1,5 +1,6 @@
 const input = document.getElementById('task-input');
 const tasks = document.getElementById('todo-list');
+const clear = document.getElementById('clear');
 
 loadEventListeners();
 
@@ -10,6 +11,8 @@ function loadEventListeners()  {
     document.addEventListener('DOMContentLoaded', loadTodos);
     // Remove todo
     document.addEventListener('click', removeTodo);
+    // Remove all todos
+    // clear.addEventListener('click', removeAllTodos);
 }
 
 // Add todo
@@ -27,8 +30,8 @@ function addTodo() {
         tasks.append(item);
 
         saveToLocal(input.value);
-        itemCount();
         input.value = '';
+        itemCount();
     }
 }
 
@@ -98,13 +101,14 @@ function itemCount() {
     let c = 0;
     let todos = JSON.parse(localStorage.getItem('tasks'));
     
-    for (let i of todos) {
+    for (let i = 0; i < todos.length; i++) {
         c += 1;
     }
     count.innerText = c;
 }
 
-// Remove all todos
+//Remove all Completed todos
 // function removeAllTodos() {
 //     tasks.innerHTML = '';
+//     localStorage.removeItem('tasks');
 // }
