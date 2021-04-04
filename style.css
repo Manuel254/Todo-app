@@ -20,18 +20,9 @@ body {
     cursor: pointer;
 }
 
-#light-theme {
-    opacity: 0;
-    position: absolute;
-    right: 5%;
-}
-
-.dark-icon {
-    opacity: 0;
-}
-
-.light-icon {
-    opacity: 1;
+a {
+    text-decoration: none;
+    color: hsl(235, 19%, 35%);;
 }
 
 /* Background for light*/
@@ -85,6 +76,14 @@ body {
     color: hsl(235, 19%, 35%);
     border-bottom: 1px solid hsl(233, 11%, 84%);
     margin: 5% 0;
+}
+
+.last-li {
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    font-size: 12px;
 }
 
 /* Hides checkbox off the page */

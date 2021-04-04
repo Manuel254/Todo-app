@@ -27,6 +27,7 @@ function addTodo() {
         tasks.append(item);
 
         saveToLocal(input.value);
+        itemCount();
         input.value = '';
     }
 }
@@ -62,6 +63,7 @@ function loadTodos() {
                         `;
         tasks.append(item);
     });
+    itemCount();
 }
 
 
@@ -85,8 +87,21 @@ function removeTodo(e) {
                 }
             });
             localStorage.setItem('tasks', JSON.stringify(todos));
+            itemCount();
         }
     }
+}
+
+// Items count
+function itemCount() {
+    let count = document.querySelector('.count');
+    let c = 0;
+    let todos = JSON.parse(localStorage.getItem('tasks'));
+    
+    for (let i of todos) {
+        c += 1;
+    }
+    count.innerText = c;
 }
 
 // Remove all todos
