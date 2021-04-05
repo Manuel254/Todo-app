@@ -126,6 +126,7 @@ function darkTheme() {
         document.body.classList.remove('dark-theme');
         tasks.style.backgroundColor = "white";
         input.style.backgroundColor = "white";
+        input.style.color = "black";
         darkMode.childNodes[0].src = "images/icon-moon.svg";
         darkMode.childNodes[0].alt = 'moon icon';
         bg.style.background = "url('images/bg-desktop-light.jpg') no-repeat";
