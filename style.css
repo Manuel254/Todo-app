@@ -33,7 +33,7 @@ a {
 /* Background for light*/
 .bg {
     background: url('images/bg-desktop-light.jpg') no-repeat;
-    background-size: cover;
+    background-size: 100vw 40vh;
     height: 60%;
     padding: 15% 5%;
 }
@@ -144,13 +144,6 @@ input[type="checkbox"]:checked + label{
 
 /* Desktop */
 @media (min-width:1440px) {
-    /* Background */
-    .bg {
-        background: url('images/bg-desktop-light.jpg') no-repeat;
-        background-size: 100vw 40vh;
-        position: relative;
-    }
-
     .todo-main {
         width: 45%;
         margin: -5% 28%;
