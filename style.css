@@ -13,11 +13,16 @@ body {
 }
 
 /* Utilities */
-#dark-theme,
-#light-theme {
+#dark-theme{
     width: 8%;
     height: 8%;
     cursor: pointer;
+}
+
+.dark-theme {
+    color: hsl(0, 0%, 98%);
+    background-color: hsl(235, 21%, 11%);
+    transition: .5s;
 }
 
 a {
@@ -27,7 +32,7 @@ a {
 
 /* Background for light*/
 .bg {
-    background: url('images/bg-mobile-light.jpg') no-repeat;
+    background: url('images/bg-desktop-light.jpg') no-repeat;
     background-size: cover;
     height: 60%;
     padding: 15% 5%;
@@ -79,7 +84,6 @@ a {
 }
 
 .last-li {
-    
     display: flex;
     justify-content: space-between;
     padding: 1em;

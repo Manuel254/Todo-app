@@ -1,6 +1,8 @@
 const input = document.getElementById('task-input');
 const tasks = document.getElementById('todo-list');
 const clear = document.getElementById('clear');
+const darkMode = document.getElementById('dark-theme');
+let bg = document.querySelector('.bg');
 
 loadEventListeners();
 
@@ -13,6 +15,8 @@ function loadEventListeners()  {
     document.addEventListener('click', removeTodo);
     // Remove all todos
     // clear.addEventListener('click', removeAllTodos);
+    // Dark theme
+    darkMode.addEventListener('click', darkTheme);
 }
 
 // Add todo
@@ -107,6 +111,27 @@ function itemCount() {
     count.innerText = c;
 }
 
+// Dark Theme
+function darkTheme() {
+    if (darkMode.childNodes[0].alt === 'moon icon'){
+        document.body.classList.add('dark-theme');
+        tasks.style.backgroundColor = 'hsl(235, 24%, 19%)';
+        input.style.backgroundColor = 'hsl(235, 24%, 19%)';
+        input.style.color = "white";
+        darkMode.childNodes[0].src = "images/icon-sun.svg";
+        darkMode.childNodes[0].alt = "sun icon";
+        bg.style.background = "url('images/bg-desktop-dark.jpg') no-repeat";
+        bg.style.backgroundSize = '100vw 40vh';
+    }else {
+        document.body.classList.remove('dark-theme');
+        tasks.style.backgroundColor = "white";
+        input.style.backgroundColor = "white";
+        darkMode.childNodes[0].src = "images/icon-moon.svg";
+        darkMode.childNodes[0].alt = 'moon icon';
+        bg.style.background = "url('images/bg-desktop-light.jpg') no-repeat";
+        bg.style.backgroundSize = '100vw 40vh';
+    }
+}
 //Remove all Completed todos
 // function removeAllTodos() {
 //     tasks.innerHTML = '';
